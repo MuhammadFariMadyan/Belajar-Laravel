@@ -1,5 +1,5 @@
 @extends('layouts.aplikasi')
-@section('title', 'Selamat Datang')
+@section('title', 'Data Buku')
 @section('content')
 
     <table class="table table-bordered table-hover table-responsive table-striped">
