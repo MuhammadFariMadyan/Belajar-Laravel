@@ -15,4 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//route buku
 Route::get('/buku', 'BukuController@index');
+
+//route mahasiswa
+Route::get('/mahasiswa', 'MahasiswaController@index');
