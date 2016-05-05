@@ -16,10 +16,12 @@ Route::get('/', function () {
 });
 
 //route buku
-Route::get('/buku', 'BukuController@index');
+Route::get('/Buku', 'BukuController@index');
+Route::get('/TambahBuku', 'BukuController@tambahBuku');
+Route::post('/SimpanBuku', 'BukuController@simpanBuku');
 
 //route mahasiswa
-Route::get('/mahasiswa', 'MahasiswaController@index');
+Route::get('/Mahasiswa', 'MahasiswaController@index');
 
 //route peminjaman
-Route::get('/peminjaman', 'PeminjamanController@index');
+Route::get('/Peminjaman', 'PeminjamanController@index');
