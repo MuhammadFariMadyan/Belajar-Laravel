@@ -20,3 +20,6 @@ Route::get('/buku', 'BukuController@index');
 
 //route mahasiswa
 Route::get('/mahasiswa', 'MahasiswaController@index');
+
+//route peminjaman
+Route::get('/peminjaman', 'PeminjamanController@index');
