@@ -64,6 +64,8 @@ class PeminjamanController extends Controller
 
         $peminjaman->save();
 
+        \Session::flash('flash_message', 'data peminjaman berhasil disimpan');
+        
         return redirect('Peminjaman');
     }
 
@@ -119,6 +121,8 @@ class PeminjamanController extends Controller
                 'id_buku' => $request->id_buku
             ]);
 
+        \Session::flash('flash_message', 'data peminjaman berhasil diubah');
+
         return redirect('Peminjaman');
     }
 
@@ -126,6 +130,9 @@ class PeminjamanController extends Controller
     {
         $peminjaman = Peminjaman::where('id_peminjaman', $idPeminjaman)->firstOrFail();
         Peminjaman::where('id_peminjaman', $peminjaman->id_peminjaman)->delete();
+
+        \Session::flash('flash_message', 'data peminjaman berhasil dihapus');
+        
         return redirect('Peminjaman');
     }
 }

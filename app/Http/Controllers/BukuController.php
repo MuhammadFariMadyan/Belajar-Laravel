@@ -44,6 +44,8 @@ class BukuController extends Controller
 
         $buku->save();
 
+        \Session::flash('flash_message', 'data buku berhasil disimpan');
+
         return redirect('Buku');
     }
 
@@ -79,6 +81,8 @@ class BukuController extends Controller
                 'nomor_rak_buku' => $request->nomor_rak_buku
             ]);
 
+        \Session::flash('flash_message', 'data buku berhasil diubah');
+
         return redirect('Buku');
     }
 
@@ -86,6 +90,9 @@ class BukuController extends Controller
     {
         $buku = Buku::where('id_buku', $idBuku)->firstOrFail();
         Buku::where('id_buku', $buku->id_buku)->delete();
+
+        \Session::flash('flash_message', 'data buku berhasil dihapus');
+        
         return redirect('Buku');
     }
 }

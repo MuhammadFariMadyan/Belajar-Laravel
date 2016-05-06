@@ -41,6 +41,8 @@ class MahasiswaController extends Controller
 
         $mahasiswa->save();
 
+        \Session::flash('flash_message', 'data Mahasiswa berhasil disimpan');
+
         return redirect('Mahasiswa');
     }
 
@@ -72,6 +74,8 @@ class MahasiswaController extends Controller
                 'alamat' => $request->alamat
             ]);
 
+        \Session::flash('flash_message', 'data Mahasiswa berhasil diubah');
+
         return redirect('Mahasiswa');
     }
 
@@ -80,6 +84,9 @@ class MahasiswaController extends Controller
     {
         $mahasiswa = Mahasiswa::where('npm', $npm)->firstOrFail();
         Mahasiswa::where('npm', $mahasiswa->npm)->delete();
+
+        \Session::flash('flash_message', 'data mahasiswa berhasil dihapus');
+        
         return redirect('Mahasiswa');
     }
 }
