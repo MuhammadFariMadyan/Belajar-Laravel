@@ -2,9 +2,23 @@
 @section('title', 'Data Peminjaman Buku')
 @section('content')
 
+    <h1 class="text-center">Daftar Peminjaman Buku</h1>
+
     <a href="{{ url('TambahPeminjaman') }}">
         <button class="btn btn-primary">Tambah Data</button>
     </a>
+
+    <p></p>
+
+    {!! Form::open(array('url' => 'CariPeminjaman', 'class'=>'form form-inline')) !!}
+    {!! Form::select('key', array(
+            'tanggal_peminjaman' => 'Tanggal Peminjaman',
+            'tb_mahasiswa.npm' => 'NPM',
+            'tb_buku.id_buku' => 'ID Buku'
+        ), null, ['class' => 'form-control', 'placeholder' => 'Pilih Kata Kunci']) !!}
+    {!! Form::text('value', null, ['class' => 'form-control', 'placeholder' =>'Cari Data Peminjaman Buku']) !!}
+    {!! Form::submit('Cari', ['class'=>'btn btn-default']) !!}
+    {!! Form::close() !!}
 
     <p></p>
 
