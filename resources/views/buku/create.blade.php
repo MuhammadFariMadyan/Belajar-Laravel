@@ -2,6 +2,14 @@
 @section('title', 'Tambah Data Buku')
 @section('content')
 
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        </div>
+    @endif
+
     {!! Form::open(array('url' => 'SimpanBuku')) !!}
 
     <div class="form-group">

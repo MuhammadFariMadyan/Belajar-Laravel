@@ -23,6 +23,15 @@ class BukuController extends Controller
 
     public function simpanBuku(Request $request)
     {
+        $this->validate($request, [
+            'judul_buku' => 'required|max:50',
+            'pengarang' => 'required|max:50',
+            'tahun_terbit' => 'required|integer',
+            'penerbit' => 'required|max:50',
+            'jumlah_buku' => 'required|integer',
+            'nomor_rak_buku' => 'required|max:50',
+        ]);
+
         $buku = new Buku;
 
         $buku->id_buku = Uuid::uuid4();
