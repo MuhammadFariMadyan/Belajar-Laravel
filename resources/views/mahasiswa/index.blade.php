@@ -2,6 +2,12 @@
 @section('title', 'Data Mahasiswa')
 @section('content')
 
+    <a href="{{ url('TambahMahasiswa') }}">
+        <button class="btn btn-primary">Tambah Data</button>
+    </a>
+
+    <p></p>
+
     <table class="table table-bordered table-hover table-responsive table-striped">
         <thead>
         <tr>
