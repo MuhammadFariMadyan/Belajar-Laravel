@@ -22,6 +22,15 @@ class MahasiswaController extends Controller
 
     public function simpanMahasiswa(Request $request)
     {
+
+        $this->validate($request, [
+            'npm' => 'required|max:8',
+            'nama' => 'required|max:50',
+            'kelas' => 'required|max:6',
+            'jenis_kelamin' => 'required',
+            'alamat' => 'required'
+        ]);
+
         $mahasiswa = new Mahasiswa;
 
         $mahasiswa->npm = $request->npm;
