@@ -81,4 +81,11 @@ class BukuController extends Controller
 
         return redirect('Buku');
     }
+
+    public function hapusBuku($idBuku)
+    {
+        $buku = Buku::where('id_buku', $idBuku)->firstOrFail();
+        Buku::where('id_buku', $buku->id_buku)->delete();
+        return redirect('Buku');
+    }
 }
