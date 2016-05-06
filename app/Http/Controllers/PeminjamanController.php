@@ -47,6 +47,13 @@ class PeminjamanController extends Controller
 
     public function simpanPeminjaman(Request $request)
     {
+        $this->validate($request, [
+            'tanggal_peminjaman' => 'required|date',
+            'tanggal_batas_pengembalian' => 'required|date',
+            'mahasiswa' => 'required',
+            'buku' => 'required'
+        ]);
+
         $peminjaman = new Peminjaman;
 
         $peminjaman->id_peminjaman = Uuid::uuid4();
