@@ -35,6 +35,7 @@ Route::delete('HapusMahasiswa/{npm}', ['middleware' => 'auth', 'uses' => 'Mahasi
 
 //route peminjaman
 Route::get('Peminjaman', ['middleware' => 'auth', 'uses' => 'PeminjamanController@index']);
+Route::post('CariPeminjaman', ['middleware' => 'auth', 'uses' => 'PeminjamanController@cariPeminjaman']);
 Route::get('TambahPeminjaman', ['middleware' => 'auth', 'uses' => 'PeminjamanController@tambahPeminjaman']);
 Route::post('SimpanPeminjaman', ['middleware' => 'auth', 'uses' => 'PeminjamanController@simpanPeminjaman']);
 Route::get('EditPeminjaman/{idPeminjaman}', ['middleware' => 'auth', 'uses' => 'PeminjamanController@editPeminjaman']);
