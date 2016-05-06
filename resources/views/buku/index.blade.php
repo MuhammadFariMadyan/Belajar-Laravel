@@ -2,9 +2,27 @@
 @section('title', 'Data Buku')
 @section('content')
 
-    <a href="{{ url('TambahBuku') }}">
-        <button class="btn btn-primary">Tambah Data</button>
-    </a>
+    <div class="input-group">
+        <a href="{{ url('TambahBuku') }}">
+            <button class="btn btn-primary">Tambah Data</button>
+        </a>
+    </div>
+
+    <p></p>
+
+    {!! Form::open(array('url' => 'CariBuku', 'class'=>'form form-inline')) !!}
+    {!! Form::select('key', array(
+            'id_buku' => 'ID Buku',
+            'judul_buku' => 'Judul Buku',
+            'pengarang' => 'Pengarang',
+            'tahun_terbit' => 'Tahun Terbit',
+            'penerbit' => 'Penerbit',
+            'jumlah_buku' => 'Jumlah Buku',
+            'nomor_rak_buku' => 'Nomor Rak Buku'
+        ), null, ['class' => 'form-control', 'placeholder' => 'Pilih Kata Kunci']) !!}
+    {!! Form::text('value', null, ['class' => 'form-control', 'placeholder' =>'Cari Data Buku']) !!}
+    {!! Form::submit('Cari', ['class'=>'btn btn-default']) !!}
+    {!! Form::close() !!}
 
     <p></p>
 
