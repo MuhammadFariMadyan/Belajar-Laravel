@@ -15,6 +15,15 @@ class MahasiswaController extends Controller
         return view('mahasiswa.index', ['mahasiswas' => $mahasiswa]);
     }
 
+    public function cariMahasiswa(Request $request)
+    {
+        $key = $request->key;
+        $value = $request->value;
+
+        $mahasiswa = Mahasiswa::where($key, 'like', '%' . $value . '%')->paginate(10);
+        return view('mahasiswa.index', ['mahasiswas' => $mahasiswa]);
+    }
+
     public function tambahMahasiswa()
     {
         return view('mahasiswa.create');
