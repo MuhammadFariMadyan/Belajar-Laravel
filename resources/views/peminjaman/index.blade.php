@@ -2,6 +2,12 @@
 @section('title', 'Data Peminjaman Buku')
 @section('content')
 
+    <a href="{{ url('TambahPeminjaman') }}">
+        <button class="btn btn-primary">Tambah Data</button>
+    </a>
+
+    <p></p>
+
     <table class="table table-bordered table-hover table-responsive table-striped">
         <thead>
         <tr>
