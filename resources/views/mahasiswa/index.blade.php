@@ -33,6 +33,11 @@
                             <i class="glyphicon glyphicon-pencil"></i>
                         </button>
                     </a>
+                    {!! Form::open(array('url' => "HapusMahasiswa/$mahasiswa->npm", 'method' => 'delete')) !!}
+                    <button class="btn btn-danger">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </button>
+                    {!! Form::close() !!}
                 </td>
             </tr>
         @endforeach
