@@ -22,6 +22,8 @@ Route::post('/SimpanBuku', 'BukuController@simpanBuku');
 
 //route mahasiswa
 Route::get('/Mahasiswa', 'MahasiswaController@index');
+Route::get('/TambahMahasiswa', 'MahasiswaController@tambahMahasiswa');
+Route::post('/SimpanMahasiswa', 'MahasiswaController@simpanMahasiswa');
 
 //route peminjaman
 Route::get('/Peminjaman', 'PeminjamanController@index');
