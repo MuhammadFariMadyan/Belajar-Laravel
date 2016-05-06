@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('About', ['uses' => 'AboutController@index']);
+
 //route buku
 Route::get('Buku', ['middleware' => 'auth', 'uses' => 'BukuController@index']);
 Route::post('CariBuku', ['middleware' => 'auth', 'uses' => 'BukuController@cariBuku']);

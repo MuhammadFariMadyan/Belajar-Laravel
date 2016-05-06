@@ -41,6 +41,7 @@
                 <li><a href="{{ url('Mahasiswa') }}">Data Mahasiswa</a></li>
                 <li><a href="{{ url('Buku') }}">Data Buku</a></li>
                 <li><a href="{{ url('Peminjaman') }}">Data Peminjaman</a></li>
+                <li><a href="{{ url('About') }}">About</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
