@@ -74,4 +74,12 @@ class MahasiswaController extends Controller
 
         return redirect('Mahasiswa');
     }
+
+
+    public function hapusMahasiswa($npm)
+    {
+        $mahasiswa = Mahasiswa::where('npm', $npm)->firstOrFail();
+        Mahasiswa::where('npm', $mahasiswa->npm)->delete();
+        return redirect('Mahasiswa');
+    }
 }
