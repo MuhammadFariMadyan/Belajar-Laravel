@@ -11,13 +11,14 @@
     <table class="table table-bordered table-hover table-responsive table-striped">
         <thead>
         <tr>
-            <th>ID Buku</th>
-            <th>Judul Buku</th>
-            <th>Pengarang</th>
-            <th>Tahun Terbit</th>
-            <th>Penerbit</th>
-            <th>Jumlah Buku</th>
-            <th>Nomor Rak Buku</th>
+            <th class="text-center">ID Buku</th>
+            <th class="text-center">Judul Buku</th>
+            <th class="text-center">Pengarang</th>
+            <th class="text-center">Tahun Terbit</th>
+            <th class="text-center">Penerbit</th>
+            <th class="text-center">Jumlah Buku</th>
+            <th class="text-center">Nomor Rak Buku</th>
+            <th class="text-center">Aksi</th>
         </tr>
         </thead>
         <tbody>
@@ -30,6 +31,13 @@
                 <td>{{ $buku->penerbit }}</td>
                 <td>{{ $buku->jumlah_buku }}</td>
                 <td>{{ $buku->nomor_rak_buku }}</td>
+                <td class="text-center">
+                    <a href="{{ url("EditBuku/$buku->id_buku") }}">
+                        <button class="btn btn-success">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </button>
+                    </a>
+                </td>
             </tr>
         @endforeach
         </tbody>
