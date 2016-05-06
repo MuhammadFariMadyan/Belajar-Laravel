@@ -33,3 +33,5 @@ Route::put('/UpdateMahasiswa/{npm}', 'MahasiswaController@updateMahasiswa');
 Route::get('/Peminjaman', 'PeminjamanController@index');
 Route::get('/TambahPeminjaman', 'PeminjamanController@tambahPeminjaman');
 Route::post('/SimpanPeminjaman', 'PeminjamanController@simpanPeminjaman');
+Route::get('/EditPeminjaman/{idPeminjaman}', 'PeminjamanController@editPeminjaman');
+Route::put('/UpdatePeminjaman/{npm}', 'PeminjamanController@updatePeminjaman');
