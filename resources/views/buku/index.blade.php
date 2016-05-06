@@ -2,6 +2,8 @@
 @section('title', 'Data Buku')
 @section('content')
 
+    <h1 class="text-center">Daftar Buku</h1>
+
     <div class="input-group">
         <a href="{{ url('TambahBuku') }}">
             <button class="btn btn-primary">Tambah Data</button>
