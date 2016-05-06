@@ -121,4 +121,11 @@ class PeminjamanController extends Controller
 
         return redirect('Peminjaman');
     }
+
+    public function hapusPeminjaman($idPeminjaman)
+    {
+        $peminjaman = Peminjaman::where('id_peminjaman', $idPeminjaman)->firstOrFail();
+        Peminjaman::where('id_peminjaman', $peminjaman->id_peminjaman)->delete();
+        return redirect('Peminjaman');
+    }
 }
