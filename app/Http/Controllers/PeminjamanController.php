@@ -34,6 +34,32 @@ class PeminjamanController extends Controller
         return view('peminjaman.index', ['peminjamans' => $peminjaman]);
     }
 
+    public function cariPeminjaman(Request $request)
+    {
+        $key = $request->key;
+        $value = $request->value;
+
+        $peminjaman = \DB::table('tb_peminjaman')
+            ->join('tb_buku', 'tb_peminjaman.id_buku', '=', 'tb_buku.id_buku')
+            ->join('tb_mahasiswa', 'tb_peminjaman.npm', '=', 'tb_mahasiswa.npm')
+            ->select(
+                'tb_peminjaman.tanggal_batas_pengembalian',
+                'tb_peminjaman.tanggal_peminjaman',
+                'tb_peminjaman.id_peminjaman',
+                'tb_mahasiswa.npm',
+                'tb_mahasiswa.nama',
+                'tb_mahasiswa.kelas',
+                'tb_buku.judul_buku',
+                'tb_buku.pengarang',
+                'tb_buku.tahun_terbit',
+                'tb_buku.penerbit',
+                'tb_buku.nomor_rak_buku'
+            )
+            ->where($key, 'like', '%' . $value . '%')
+            ->paginate(10);
+        return view('peminjaman.index', ['peminjamans' => $peminjaman]);
+    }
+
     public function tambahPeminjaman()
     {
         $mahasiswas = Mahasiswa::lists('nama', 'npm');
@@ -65,7 +91,7 @@ class PeminjamanController extends Controller
         $peminjaman->save();
 
         \Session::flash('flash_message', 'data peminjaman berhasil disimpan');
-        
+
         return redirect('Peminjaman');
     }
 
@@ -132,7 +158,7 @@ class PeminjamanController extends Controller
         Peminjaman::where('id_peminjaman', $peminjaman->id_peminjaman)->delete();
 
         \Session::flash('flash_message', 'data peminjaman berhasil dihapus');
-        
+
         return redirect('Peminjaman');
     }
 }
