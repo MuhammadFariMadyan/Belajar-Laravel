@@ -16,6 +16,15 @@ class BukuController extends Controller
         return view('buku.index', ['bukus' => $buku]);
     }
 
+    public function cariBuku(Request $request)
+    {
+        $key = $request->key;
+        $value = $request->value;
+
+        $buku = Buku::where($key, 'like', '%' . $value . '%')->paginate(10);
+        return view('buku.index', ['bukus' => $buku]);
+    }
+
     public function tambahBuku()
     {
         return view('buku.create');
@@ -92,7 +101,7 @@ class BukuController extends Controller
         Buku::where('id_buku', $buku->id_buku)->delete();
 
         \Session::flash('flash_message', 'data buku berhasil dihapus');
-        
+
         return redirect('Buku');
     }
 }
