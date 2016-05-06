@@ -38,7 +38,7 @@
         {!! Form::textarea('alamat', null, ['class' => 'form-control', 'placeholder' => 'Masukkan Alamat']) !!}
     </div>
 
-    {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
+    {!! Form::submit('Update', ['class' => 'btn btn-success']) !!}
 
     {!! Form::close() !!}
 
