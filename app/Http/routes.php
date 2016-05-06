@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 //route buku
 Route::get('Buku', ['middleware' => 'auth', 'uses' => 'BukuController@index']);
+Route::post('CariBuku', ['middleware' => 'auth', 'uses' => 'BukuController@cariBuku']);
 Route::get('TambahBuku', ['middleware' => 'auth', 'uses' => 'BukuController@tambahBuku']);
 Route::post('SimpanBuku', ['middleware' => 'auth', 'uses' => 'BukuController@simpanBuku']);
 Route::get('EditBuku/{idBuku}', ['middleware' => 'auth', 'uses' => 'BukuController@editBuku']);
