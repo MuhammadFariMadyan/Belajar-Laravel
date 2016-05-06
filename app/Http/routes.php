@@ -25,18 +25,19 @@ Route::put('UpdateBuku/{idBuku}', ['middleware' => 'auth', 'uses' => 'BukuContro
 Route::delete('HapusBuku/{idBuku}', ['middleware' => 'auth', 'uses' => 'BukuController@hapusBuku']);
 
 //route mahasiswa
-Route::get('/Mahasiswa', ['middleware' => 'auth', 'uses' => 'MahasiswaController@index']);
-Route::get('/TambahMahasiswa', ['middleware' => 'auth', 'uses' => 'MahasiswaController@tambahMahasiswa']);
-Route::post('/SimpanMahasiswa', ['middleware' => 'auth', 'uses' => 'MahasiswaController@simpanMahasiswa']);
-Route::get('/EditMahasiswa/{npm}', ['middleware' => 'auth', 'uses' => 'MahasiswaController@editMahasiswa']);
-Route::put('/UpdateMahasiswa/{npm}', ['middleware' => 'auth', 'uses' => 'MahasiswaController@updateMahasiswa']);
-Route::delete('/HapusMahasiswa/{npm}', ['middleware' => 'auth', 'uses' => 'MahasiswaController@hapusMahasiswa']);
+Route::get('Mahasiswa', ['middleware' => 'auth', 'uses' => 'MahasiswaController@index']);
+Route::post('CariMahasiswa', ['middleware' => 'auth', 'uses' => 'MahasiswaController@cariMahasiswa']);
+Route::get('TambahMahasiswa', ['middleware' => 'auth', 'uses' => 'MahasiswaController@tambahMahasiswa']);
+Route::post('SimpanMahasiswa', ['middleware' => 'auth', 'uses' => 'MahasiswaController@simpanMahasiswa']);
+Route::get('EditMahasiswa/{npm}', ['middleware' => 'auth', 'uses' => 'MahasiswaController@editMahasiswa']);
+Route::put('UpdateMahasiswa/{npm}', ['middleware' => 'auth', 'uses' => 'MahasiswaController@updateMahasiswa']);
+Route::delete('HapusMahasiswa/{npm}', ['middleware' => 'auth', 'uses' => 'MahasiswaController@hapusMahasiswa']);
 
 //route peminjaman
-Route::get('/Peminjaman', ['middleware' => 'auth', 'uses' => 'PeminjamanController@index']);
-Route::get('/TambahPeminjaman', ['middleware' => 'auth', 'uses' => 'PeminjamanController@tambahPeminjaman']);
-Route::post('/SimpanPeminjaman', ['middleware' => 'auth', 'uses' => 'PeminjamanController@simpanPeminjaman']);
-Route::get('/EditPeminjaman/{idPeminjaman}', ['middleware' => 'auth', 'uses' => 'PeminjamanController@editPeminjaman']);
-Route::put('/UpdatePeminjaman/{idPeminjaman}', ['middleware' => 'auth', 'uses' => 'PeminjamanController@updatePeminjaman']);
-Route::delete('/HapusPeminjaman/{idPeminjaman}', ['middleware' => 'auth', 'uses' => 'PeminjamanController@hapusPeminjaman']);
+Route::get('Peminjaman', ['middleware' => 'auth', 'uses' => 'PeminjamanController@index']);
+Route::get('TambahPeminjaman', ['middleware' => 'auth', 'uses' => 'PeminjamanController@tambahPeminjaman']);
+Route::post('SimpanPeminjaman', ['middleware' => 'auth', 'uses' => 'PeminjamanController@simpanPeminjaman']);
+Route::get('EditPeminjaman/{idPeminjaman}', ['middleware' => 'auth', 'uses' => 'PeminjamanController@editPeminjaman']);
+Route::put('UpdatePeminjaman/{idPeminjaman}', ['middleware' => 'auth', 'uses' => 'PeminjamanController@updatePeminjaman']);
+Route::delete('HapusPeminjaman/{idPeminjaman}', ['middleware' => 'auth', 'uses' => 'PeminjamanController@hapusPeminjaman']);
 Route::auth();
