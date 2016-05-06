@@ -37,6 +37,11 @@
                             <i class="glyphicon glyphicon-pencil"></i>
                         </button>
                     </a>
+                    {!! Form::open(array('url' => "HapusBuku/$buku->id_buku", 'method' => 'delete')) !!}
+                    <button class="btn btn-danger">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </button>
+                    {!! Form::close() !!}
                 </td>
             </tr>
         @endforeach
