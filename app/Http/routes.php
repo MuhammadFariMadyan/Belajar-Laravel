@@ -26,6 +26,8 @@ Route::put('/UpdateBuku/{idBuku}', 'BukuController@updateBuku');
 Route::get('/Mahasiswa', 'MahasiswaController@index');
 Route::get('/TambahMahasiswa', 'MahasiswaController@tambahMahasiswa');
 Route::post('/SimpanMahasiswa', 'MahasiswaController@simpanMahasiswa');
+Route::get('/EditMahasiswa/{npm}', 'MahasiswaController@editMahasiswa');
+Route::put('/UpdateMahasiswa/{npm}', 'MahasiswaController@updateMahasiswa');
 
 //route peminjaman
 Route::get('/Peminjaman', 'PeminjamanController@index');
