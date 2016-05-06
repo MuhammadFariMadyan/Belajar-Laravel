@@ -19,6 +19,7 @@
             <th class="text-center">Judul Buku</th>
             <th class="text-center">Pengarang</th>
             <th class="text-center">No Rak Buku</th>
+            <th class="text-center">Aksi</th>
         </tr>
         </thead>
         <tbody>
@@ -32,6 +33,13 @@
                 <td>{{ $peminjaman->judul_buku }}</td>
                 <td>{{ $peminjaman->pengarang }}</td>
                 <td>{{ $peminjaman->nomor_rak_buku }}</td>
+                <td class="text-center">
+                    <a href="{{ url("EditPeminjaman/$peminjaman->id_peminjaman") }}">
+                        <button class="btn btn-success">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </button>
+                    </a>
+                </td>
             </tr>
         @endforeach
         </tbody>
