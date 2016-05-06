@@ -27,3 +27,5 @@ Route::post('/SimpanMahasiswa', 'MahasiswaController@simpanMahasiswa');
 
 //route peminjaman
 Route::get('/Peminjaman', 'PeminjamanController@index');
+Route::get('/TambahPeminjaman', 'PeminjamanController@tambahPeminjaman');
+Route::post('/SimpanPeminjaman', 'PeminjamanController@simpanPeminjaman');
