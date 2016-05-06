@@ -8,6 +8,18 @@
 
     <p></p>
 
+    {!! Form::open(array('url' => 'CariMahasiswa', 'class'=>'form form-inline')) !!}
+    {!! Form::select('key', array(
+            'npm' => 'NPM',
+            'nama' => 'Nama',
+            'kelas' => 'Kelas'
+        ), null, ['class' => 'form-control', 'placeholder' => 'Pilih Kata Kunci']) !!}
+    {!! Form::text('value', null, ['class' => 'form-control', 'placeholder' =>'Cari Data Mahasiswa']) !!}
+    {!! Form::submit('Cari', ['class'=>'btn btn-default']) !!}
+    {!! Form::close() !!}
+
+    <p></p>
+
     <table class="table table-bordered table-hover table-responsive table-striped">
         <thead>
         <tr>
