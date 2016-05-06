@@ -46,4 +46,39 @@ class BukuController extends Controller
 
         return redirect('Buku');
     }
+
+    public function editBuku($idBuku)
+    {
+        $buku = Buku::where('id_buku', $idBuku)->firstOrFail();
+        return view('buku.edit')
+            ->with('buku', $buku);
+    }
+
+    public function updateBuku(Request $request, $idBuku)
+    {
+
+        $buku = Buku::where('id_buku', $idBuku)->firstOrFail();
+
+        $this->validate($request, [
+            'id_buku' => 'required',
+            'judul_buku' => 'required|max:50',
+            'pengarang' => 'required|max:50',
+            'tahun_terbit' => 'required|integer',
+            'penerbit' => 'required|max:50',
+            'jumlah_buku' => 'required|integer',
+            'nomor_rak_buku' => 'required|max:50'
+        ]);
+
+        Buku::where('id_buku', $buku->id_buku)
+            ->update([
+                'judul_buku' => $request->judul_buku,
+                'pengarang' => $request->pengarang,
+                'tahun_terbit' => $request->tahun_terbit,
+                'penerbit' => $request->penerbit,
+                'jumlah_buku' => $request->jumlah_buku,
+                'nomor_rak_buku' => $request->nomor_rak_buku
+            ]);
+
+        return redirect('Buku');
+    }
 }
