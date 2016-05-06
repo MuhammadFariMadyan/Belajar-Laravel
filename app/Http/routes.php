@@ -12,29 +12,30 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 //route buku
-Route::get('/Buku', 'BukuController@index');
-Route::get('/TambahBuku', 'BukuController@tambahBuku');
-Route::post('/SimpanBuku', 'BukuController@simpanBuku');
-Route::get('/EditBuku/{idBuku}', 'BukuController@editBuku');
-Route::put('/UpdateBuku/{idBuku}', 'BukuController@updateBuku');
-Route::delete('/HapusBuku/{idBuku}', 'BukuController@hapusBuku');
+Route::get('Buku', ['middleware' => 'auth', 'uses' => 'BukuController@index']);
+Route::get('TambahBuku', ['middleware' => 'auth', 'uses' => 'BukuController@tambahBuku']);
+Route::post('SimpanBuku', ['middleware' => 'auth', 'uses' => 'BukuController@simpanBuku']);
+Route::get('EditBuku/{idBuku}', ['middleware' => 'auth', 'uses' => 'BukuController@editBuku']);
+Route::put('UpdateBuku/{idBuku}', ['middleware' => 'auth', 'uses' => 'BukuController@updateBuku']);
+Route::delete('HapusBuku/{idBuku}', ['middleware' => 'auth', 'uses' => 'BukuController@hapusBuku']);
 
 //route mahasiswa
-Route::get('/Mahasiswa', 'MahasiswaController@index');
-Route::get('/TambahMahasiswa', 'MahasiswaController@tambahMahasiswa');
-Route::post('/SimpanMahasiswa', 'MahasiswaController@simpanMahasiswa');
-Route::get('/EditMahasiswa/{npm}', 'MahasiswaController@editMahasiswa');
-Route::put('/UpdateMahasiswa/{npm}', 'MahasiswaController@updateMahasiswa');
-Route::delete('/HapusMahasiswa/{npm}', 'MahasiswaController@hapusMahasiswa');
+Route::get('/Mahasiswa', ['middleware' => 'auth', 'uses' => 'MahasiswaController@index']);
+Route::get('/TambahMahasiswa', ['middleware' => 'auth', 'uses' => 'MahasiswaController@tambahMahasiswa']);
+Route::post('/SimpanMahasiswa', ['middleware' => 'auth', 'uses' => 'MahasiswaController@simpanMahasiswa']);
+Route::get('/EditMahasiswa/{npm}', ['middleware' => 'auth', 'uses' => 'MahasiswaController@editMahasiswa']);
+Route::put('/UpdateMahasiswa/{npm}', ['middleware' => 'auth', 'uses' => 'MahasiswaController@updateMahasiswa']);
+Route::delete('/HapusMahasiswa/{npm}', ['middleware' => 'auth', 'uses' => 'MahasiswaController@hapusMahasiswa']);
 
 //route peminjaman
-Route::get('/Peminjaman', 'PeminjamanController@index');
-Route::get('/TambahPeminjaman', 'PeminjamanController@tambahPeminjaman');
-Route::post('/SimpanPeminjaman', 'PeminjamanController@simpanPeminjaman');
-Route::get('/EditPeminjaman/{idPeminjaman}', 'PeminjamanController@editPeminjaman');
-Route::put('/UpdatePeminjaman/{idPeminjaman}', 'PeminjamanController@updatePeminjaman');
-Route::delete('/HapusPeminjaman/{idPeminjaman}', 'PeminjamanController@hapusPeminjaman');
+Route::get('/Peminjaman', ['middleware' => 'auth', 'uses' => 'PeminjamanController@index']);
+Route::get('/TambahPeminjaman', ['middleware' => 'auth', 'uses' => 'PeminjamanController@tambahPeminjaman']);
+Route::post('/SimpanPeminjaman', ['middleware' => 'auth', 'uses' => 'PeminjamanController@simpanPeminjaman']);
+Route::get('/EditPeminjaman/{idPeminjaman}', ['middleware' => 'auth', 'uses' => 'PeminjamanController@editPeminjaman']);
+Route::put('/UpdatePeminjaman/{idPeminjaman}', ['middleware' => 'auth', 'uses' => 'PeminjamanController@updatePeminjaman']);
+Route::delete('/HapusPeminjaman/{idPeminjaman}', ['middleware' => 'auth', 'uses' => 'PeminjamanController@hapusPeminjaman']);
+Route::auth();
