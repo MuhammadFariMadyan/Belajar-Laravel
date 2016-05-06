@@ -23,13 +23,13 @@
     </div>
 
     <div class="form-group">
-        {!! Form::label('mahasiswa', 'Mahasiswa', ['class' => 'control-label']) !!}
-        {!! Form::select('mahasiswa', $mahasiswas, null, ['class' => 'form-control', 'placeholder' => 'Pilih Mahasiswa']) !!}
+        {!! Form::label('npm', 'Mahasiswa', ['class' => 'control-label']) !!}
+        {!! Form::select('npm', $mahasiswas, null, ['class' => 'form-control', 'placeholder' => 'Pilih Mahasiswa']) !!}
     </div>
 
     <div class="form-group">
-        {!! Form::label('buku', 'Buku', ['class' => 'control-label']) !!}
-        {!! Form::select('buku', $bukus, null, ['class' => 'form-control', 'placeholder' => 'Pilih Buku']) !!}
+        {!! Form::label('id_buku', 'Buku', ['class' => 'control-label']) !!}
+        {!! Form::select('id_buku', $bukus, null, ['class' => 'form-control', 'placeholder' => 'Pilih Buku']) !!}
     </div>
 
     {!! Form::submit('Simpan', ['class' => 'btn btn-primary']) !!}
