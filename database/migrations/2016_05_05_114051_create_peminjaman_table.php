@@ -28,7 +28,8 @@ class CreatePeminjamanTable extends Migration
             $table->foreign('npm')
                 ->references('npm')
                 ->on('tb_mahasiswa')
-                ->onDelete('cascade');
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
             $table->foreign('id_buku')
                 ->references('id_buku')
