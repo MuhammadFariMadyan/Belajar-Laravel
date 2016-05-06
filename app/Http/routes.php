@@ -29,6 +29,7 @@ Route::get('/TambahMahasiswa', 'MahasiswaController@tambahMahasiswa');
 Route::post('/SimpanMahasiswa', 'MahasiswaController@simpanMahasiswa');
 Route::get('/EditMahasiswa/{npm}', 'MahasiswaController@editMahasiswa');
 Route::put('/UpdateMahasiswa/{npm}', 'MahasiswaController@updateMahasiswa');
+Route::delete('/HapusMahasiswa/{npm}', 'MahasiswaController@hapusMahasiswa');
 
 //route peminjaman
 Route::get('/Peminjaman', 'PeminjamanController@index');
