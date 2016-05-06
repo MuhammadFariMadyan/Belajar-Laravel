@@ -21,6 +21,7 @@ Route::get('/TambahBuku', 'BukuController@tambahBuku');
 Route::post('/SimpanBuku', 'BukuController@simpanBuku');
 Route::get('/EditBuku/{idBuku}', 'BukuController@editBuku');
 Route::put('/UpdateBuku/{idBuku}', 'BukuController@updateBuku');
+Route::delete('/HapusBuku/{idBuku}', 'BukuController@hapusBuku');
 
 //route mahasiswa
 Route::get('/Mahasiswa', 'MahasiswaController@index');
