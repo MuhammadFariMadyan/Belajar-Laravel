@@ -83,7 +83,7 @@ fabric.properties
 .vagrant/
 
 ### Laravel template
-/vendor
+vendor/
 /public/storage
 Homestead.yaml
 Homestead.json
